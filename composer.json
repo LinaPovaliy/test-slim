@@ -1,0 +1,23 @@
+{
+    "name": "linapovaliy/test-slim",
+    "autoload": {
+        "psr-4": {
+            "Linapovaliy\\TestSlim\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lina",
+            "email": "linapovaliy@mail.ru"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.12",
+        "slim/psr7": "^1.6",
+        "slim/php-view": "^3.2",
+        "fakerphp/faker": "^1.23",
+        "php-di/php-di": "^7.0",
+        "slim/twig-view": "^3.3",
+        "slim/http": "^1.3"
+    }
+}
