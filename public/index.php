@@ -102,4 +102,13 @@ $app->get('/users/{userId}', function ($request, $response, $args) use ($twig) {
     return $twig->render($response, 'user.twig', ['user' => $user]);
 });
 
+//print_r($_SERVER);
+//print_r($_GET);
+
+$app->get('/add_user_token', function ($request, $response) {
+    $token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdHQiOiJhY2Nlc3MiLCJleHAiOjE3MDM1MTA3MjQsImlhdCI6MTcwMzUwNzEyNC';
+    $response = $response->withHeader('Set-Cookie', 'access=' . $token . '; Max-Age=' . (24 * 60 * 60));
+    return $response->withHeader('Location', '/users')->withStatus(302);
+});
+
 $app->run();
